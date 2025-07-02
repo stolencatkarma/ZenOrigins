@@ -1,0 +1,62 @@
+main: dev.zenorigins.ZenOrigins
+name: ZenOrigins
+version: '${project.version}'
+description: An Origins-like plugin for Paper that allows players to choose entity types
+authors: [YourName]
+website: https://github.com/yourusername/ZenOrigins
+api-version: '1.21'
+
+commands:
+  origin:
+    description: Choose your origin/entity type
+    aliases: [origins, entity]
+    usage: /<command> [list|choose <origin>|reset]
+  zenorigins:
+    description: Admin commands for ZenOrigins
+    aliases: [zo]
+    usage: /<command> [reload|reset <player>]
+    permission: zenorigins.admin
+
+permissions:
+  zenorigins.use:
+    description: Allows players to use origin commands
+    default: true
+  zenorigins.admin:
+    description: Allows access to admin commands
+    default: op
+  zenorigins.origin.*:
+    description: Access to all origins
+    default: op
+    children:
+      zenorigins.origin.human: true
+      zenorigins.origin.enderman: true
+      zenorigins.origin.blaze: true
+      zenorigins.origin.spider: true
+      zenorigins.origin.phantom: true
+      zenorigins.origin.wolf: true
+      zenorigins.origin.cat: true
+      zenorigins.origin.bee: true
+  zenorigins.origin.human:
+    description: Access to human origin
+    default: true
+  zenorigins.origin.enderman:
+    description: Access to enderman origin
+    default: true
+  zenorigins.origin.blaze:
+    description: Access to blaze origin
+    default: true
+  zenorigins.origin.spider:
+    description: Access to spider origin
+    default: true
+  zenorigins.origin.phantom:
+    description: Access to phantom origin
+    default: true
+  zenorigins.origin.wolf:
+    description: Access to wolf origin
+    default: true
+  zenorigins.origin.cat:
+    description: Access to cat origin
+    default: true
+  zenorigins.origin.bee:
+    description: Access to bee origin
+    default: true

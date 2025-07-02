@@ -1,0 +1,83 @@
+# ZenOrigins Configuration
+# An Origins-like plugin for Paper 1.21.4
+
+# Plugin settings
+plugin:
+  # Enable debug logging
+  debug: false
+  
+  # Automatically save player data interval (in ticks, 20 ticks = 1 second)
+  # Set to 0 to disable automatic saving
+  auto-save-interval: 6000  # 5 minutes
+  
+  # Welcome message for new players
+  welcome-message: true
+
+# Origin settings
+origins:
+  # Default origin for new players
+  default: "human"
+  
+  # Allow players to change origins freely
+  allow-origin-switching: true
+  
+  # Cooldown for switching origins (in seconds)
+  # Set to 0 to disable cooldown
+  switch-cooldown: 300  # 5 minutes
+  
+  # Origins that are enabled
+  enabled:
+    human: true
+    enderman: true
+    blaze: true
+    spider: true
+    phantom: true
+    wolf: true
+    cat: true
+    bee: true
+
+# Per-origin configuration
+origin-config:
+  enderman:
+    # Damage taken per second in water/rain
+    water-damage: 1.0
+    # Whether endermen can pick up blocks
+    can-pick-blocks: false
+    
+  blaze:
+    # Damage taken per half-second in water
+    water-damage: 2.0
+    # Whether blazes float in lava
+    float-in-lava: true
+    
+  spider:
+    # Whether spiders can climb any surface
+    climb-any-surface: true
+    # Jump boost level (0-255)
+    jump-boost-level: 1
+    
+  phantom:
+    # Whether phantoms burn in sunlight
+    burn-in-sunlight: true
+    # Damage taken per second in sunlight
+    sunlight-damage: 1.0
+    
+  wolf:
+    # Speed boost level (0-255)
+    speed-level: 0
+    # Jump boost level (0-255)  
+    jump-level: 0
+    
+  cat:
+    # Reduced health scale (20 = normal, 16 = 8 hearts, etc.)
+    health-scale: 16.0
+    # Speed boost level
+    speed-level: 0
+    
+  bee:
+    # Reduced health scale
+    health-scale: 12.0
+    # Speed boost level
+    speed-level: 1
+    # Temperature threshold for cold damage
+    cold-threshold: 0.2
