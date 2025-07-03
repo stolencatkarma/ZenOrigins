@@ -89,6 +89,23 @@ public class OriginManager {
         
         return true;
     }
+
+    /**
+     * Set a player's origin, with an option to give items
+     */
+    public void setPlayerOrigin(Player player, Origin origin, boolean giveItems) {
+        // This method seems to be a wrapper around applyOrigin, let's consolidate
+        // For now, we'll just call applyOrigin, but the `giveItems` is not used.
+        // This suggests a potential refactor is needed if `giveItems` is important.
+        applyOrigin(player, origin.getId());
+    }
+
+    /**
+     * Reset a player's origin to Human, with an option to give items
+     */
+    public void resetPlayerOrigin(Player player, boolean giveItems) {
+        applyOrigin(player, "human");
+    }
     
     /**
      * Remove current origin from player

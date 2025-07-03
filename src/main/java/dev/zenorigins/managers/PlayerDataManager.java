@@ -99,45 +99,48 @@ public class PlayerDataManager {
         } else {
             playerOrigins.put(playerId, origin);
         }
-        savePlayerData(playerId);
+        dataConfig.set("players." + playerId.toString() + ".origin", origin);
+        saveAsync();
     }
-    
+
     /**
      * Get a player's origin
      */
     public String getPlayerOrigin(UUID playerId) {
         return playerOrigins.get(playerId);
     }
-    
+
     /**
-     * Save individual player data
+     * Set the last day a player changed their origin
      */
-    private void savePlayerData(UUID playerId) {
-        try {
-            String origin = playerOrigins.get(playerId);
-            if (origin != null) {
-                dataConfig.set("players." + playerId.toString() + ".origin", origin);
-            } else {
-                dataConfig.set("players." + playerId.toString(), null);
-            }
-            Long day = lastChangeDay.get(playerId);
-            if (day != null) {
-                dataConfig.set("players." + playerId.toString() + ".lastChangeDay", day);
-            }
-            dataConfig.save(dataFile);
-        } catch (IOException e) {
-            plugin.getLogger().warning("Could not save data for player " + playerId);
-            e.printStackTrace();
-        }
-    }
-    public Long getLastChangeDay(UUID playerId) {
-        return lastChangeDay.getOrDefault(playerId, -1L);
-    }
     public void setLastChangeDay(UUID playerId, long day) {
         lastChangeDay.put(playerId, day);
-        savePlayerData(playerId);
+        dataConfig.set("players." + playerId.toString() + ".lastChangeDay", day);
+        saveAsync();
     }
-    
+
+    /**
+     * Get the last day a player changed their origin
+     */
+    public long getLastChangeDay(UUID playerId) {
+        return lastChangeDay.getOrDefault(playerId, -1L);
+    }
+
+    /**
+     * Check if a player can change their origin
+     */
+    public boolean canChangeOrigin(UUID playerId, long currentDay) {
+        long lastDay = getLastChangeDay(playerId);
+        return currentDay > lastDay;
+    }
+
+    /**
+     * Save data asynchronously
+     */
+    private void saveAsync() {
+        plugin.getServer().getScheduler().runTaskAsynchronously(plugin, this::saveAllData);
+    }
+
     /**
      * Remove all data for a player
      */

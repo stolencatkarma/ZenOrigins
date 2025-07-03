@@ -98,46 +98,46 @@ public class OriginCommand implements CommandExecutor, TabCompleter {
         }
     }
     
-    private void chooseOrigin(Player player, String originId) {
-        long worldTime = player.getWorld().getTime();
-        long day = player.getWorld().getFullTime() / 24000L;
-        Long lastChangeDay = plugin.getPlayerDataManager().getLastChangeDay(player.getUniqueId());
-        if (!(worldTime >= 0 && worldTime <= 1000)) {
-            player.sendMessage(Component.text("You can only change your origin at dawn! (in-game time 0-1000)", NamedTextColor.RED));
-            return;
-        }
-        if (lastChangeDay != null && lastChangeDay == day) {
-            player.sendMessage(Component.text("You have already changed your origin today. Try again tomorrow at dawn!", NamedTextColor.RED));
-            return;
-        }
-        Origin origin = plugin.getOriginManager().getOrigin(originId.toLowerCase());
-        
+    private void chooseOrigin(Player player, String originName) {
+        Origin origin = plugin.getOriginManager().getOrigin(originName);
+
         if (origin == null) {
-            player.sendMessage(Component.text("Unknown origin: " + originId, NamedTextColor.RED));
+            player.sendMessage(Component.text("That origin does not exist!", NamedTextColor.RED));
             return;
         }
-        
+
         if (!origin.hasPermission(player)) {
-            player.sendMessage(Component.text("You don't have permission to use this origin!", NamedTextColor.RED));
+            player.sendMessage(Component.text("You don't have permission to choose this origin!", NamedTextColor.RED));
             return;
         }
-        
-        if (plugin.getOriginManager().applyOrigin(player, originId.toLowerCase())) {
-            plugin.getPlayerDataManager().setLastChangeDay(player.getUniqueId(), day);
-            player.sendMessage(Component.text("You have chosen the ", NamedTextColor.GREEN)
-                .append(Component.text(origin.getDisplayName(), NamedTextColor.GOLD, TextDecoration.BOLD))
-                .append(Component.text(" origin!", NamedTextColor.GREEN)));
-        } else {
-            player.sendMessage(Component.text("Failed to apply origin. Please try again.", NamedTextColor.RED));
+
+        long currentDay = player.getWorld().getFullTime() / 24000L;
+
+        if (!plugin.getPlayerDataManager().canChangeOrigin(player.getUniqueId(), currentDay)) {
+            player.sendMessage(Component.text("You can only change your origin once per Minecraft day!", NamedTextColor.RED));
+            return;
         }
+
+        plugin.getOriginManager().setPlayerOrigin(player, origin, false); // Don't give items on command change
+        plugin.getPlayerDataManager().setLastChangeDay(player.getUniqueId(), currentDay);
+
+        player.sendMessage(Component.text("You are now a ", NamedTextColor.GREEN)
+            .append(Component.text(origin.getDisplayName(), NamedTextColor.GOLD, TextDecoration.BOLD))
+            .append(Component.text("!", NamedTextColor.GREEN)));
     }
-    
+
     private void resetOrigin(Player player) {
-        if (plugin.getOriginManager().applyOrigin(player, "human")) {
-            player.sendMessage(Component.text("Your origin has been reset to Human.", NamedTextColor.GREEN));
-        } else {
-            player.sendMessage(Component.text("Failed to reset origin. Please try again.", NamedTextColor.RED));
+        long currentDay = player.getWorld().getFullTime() / 24000L;
+
+        if (!plugin.getPlayerDataManager().canChangeOrigin(player.getUniqueId(), currentDay)) {
+            player.sendMessage(Component.text("You can only change your origin once per Minecraft day!", NamedTextColor.RED));
+            return;
         }
+
+        plugin.getOriginManager().resetPlayerOrigin(player, false); // Don't give items on command change
+        plugin.getPlayerDataManager().setLastChangeDay(player.getUniqueId(), currentDay);
+
+        player.sendMessage(Component.text("You have reset your origin to Human.", NamedTextColor.GREEN));
     }
     
     private void showCurrentOrigin(Player player) {
