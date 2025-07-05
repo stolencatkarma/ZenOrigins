@@ -7,7 +7,7 @@ A Paper plugin for Minecraft 1.21.4 that allows players to choose and play as di
 - **8 Different Origins**: Human, Enderman, Blaze, Spider, Phantom, Wolf, Cat, and Bee
 - **Unique Abilities**: Each origin has special powers and characteristics
 - **Balanced Weaknesses**: Every origin has drawbacks to maintain game balance
-- **Once-per-day Restriction**: Players can only change their origin once per Minecraft day
+- **Once-per-day Restriction**: Players can only change their origin once per in-game day (anytime during that day)
 - **Interactive GUI**: Beautiful server-side inventory GUI for easy origin selection
 - **Persistent Data**: Player origins and change history are saved across server restarts
 - **Permission System**: Full permission support for different origins

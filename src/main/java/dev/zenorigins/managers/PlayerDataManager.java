@@ -127,11 +127,12 @@ public class PlayerDataManager {
     }
 
     /**
-     * Check if a player can change their origin
+     * Check if a player can change their origin (once per in-game day)
      */
     public boolean canChangeOrigin(UUID playerId, long currentDay) {
         long lastDay = getLastChangeDay(playerId);
-        return currentDay > lastDay;
+        // Allow change if it's a different day or they've never changed before
+        return lastDay < 0 || currentDay != lastDay;
     }
 
     /**

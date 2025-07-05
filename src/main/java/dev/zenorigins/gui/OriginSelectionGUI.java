@@ -111,7 +111,7 @@ public class OriginSelectionGUI implements InventoryHolder {
         if (plugin.getPlayerDataManager().canChangeOrigin(player.getUniqueId(), currentDay)) {
             lore.add(Component.text("Click to select this origin!", NamedTextColor.YELLOW, TextDecoration.ITALIC));
         } else {
-            lore.add(Component.text("You can only change origins once per day!", NamedTextColor.RED, TextDecoration.ITALIC));
+            lore.add(Component.text("You can only change origins once per in-game day!", NamedTextColor.RED, TextDecoration.ITALIC));
         }
         
         meta.lore(lore);
@@ -151,7 +151,7 @@ public class OriginSelectionGUI implements InventoryHolder {
             if (plugin.getPlayerDataManager().canChangeOrigin(player.getUniqueId(), currentDay)) {
                 lore.add(Component.text("You can change your origin today!", NamedTextColor.GREEN));
             } else {
-                lore.add(Component.text("You must wait until tomorrow to change.", NamedTextColor.RED));
+                lore.add(Component.text("You must wait until the next in-game day to change.", NamedTextColor.RED));
             }
         } else {
             lore.add(Component.text("You haven't changed your origin yet!", NamedTextColor.YELLOW));

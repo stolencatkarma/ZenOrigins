@@ -61,7 +61,7 @@ public class GUIListener implements Listener {
         // Check if player can change origin today
         long currentDay = player.getWorld().getFullTime() / 24000L;
         if (!plugin.getPlayerDataManager().canChangeOrigin(player.getUniqueId(), currentDay)) {
-            player.sendMessage(Component.text("You can only change your origin once per Minecraft day!", NamedTextColor.RED));
+            player.sendMessage(Component.text("You can only change your origin once per in-game day!", NamedTextColor.RED));
             return;
         }
         
