@@ -4,7 +4,7 @@ A Paper plugin for Minecraft 1.21.4 that allows players to choose and play as di
 
 ## Features
 
-- **8 Different Origins**: Human, Enderman, Blaze, Spider, Phantom, Wolf, Cat, and Bee
+- **14 Different Origins**: Human, Enderman, Blaze, Spider, Phantom, Wolf, Cat, Bee, Villager, Slime, Drowned, Iron Golem, Witch, and Piglin
 - **Unique Abilities**: Each origin has special powers and characteristics
 - **Balanced Weaknesses**: Every origin has drawbacks to maintain game balance
 - **Once-per-day Restriction**: Players can only change their origin once per in-game day (anytime during that day)
@@ -73,6 +73,36 @@ A Paper plugin for Minecraft 1.21.4 that allows players to choose and play as di
 - **Description**: A small flying insect that can pollinate and sting
 - **Abilities**: Flight, flower interaction, poison immunity
 - **Weaknesses**: Dies when attacking (like real bees)
+
+### Villager
+- **Description**: A peaceful trader with knowledge of commerce
+- **Abilities**: Better villager trades, can detect nearby villages, immune to raid effects, natural trading instincts
+- **Weaknesses**: Cannot use weapons above stone tier, takes extra damage from illagers, slower movement speed
+
+### Slime
+- **Description**: A bouncy gelatinous creature that can jump high and absorb falls
+- **Abilities**: No fall damage, jump boost, bouncy movement, fire resistance
+- **Weaknesses**: Takes extra damage from fire, slower movement on land, weak to piercing
+
+### Drowned
+- **Description**: An undead aquatic creature that thrives underwater
+- **Abilities**: Water breathing, swim speed, trident proficiency, night vision underwater
+- **Weaknesses**: Takes damage in sunlight, slower on land, burns in daylight
+
+### Iron Golem
+- **Description**: A powerful iron construct built to protect villages
+- **Abilities**: Incredible strength, high durability, knockback immunity, villager protection
+- **Weaknesses**: Cannot use ranged weapons, slow movement, sinks in water, cannot eat most foods
+
+### Witch
+- **Description**: A magical potion brewer with knowledge of alchemy
+- **Abilities**: Instant potion brewing, poison immunity, magic resistance, potion effects last longer
+- **Weaknesses**: Takes extra damage from magic, weak melee attacks, burns in sunlight
+
+### Piglin
+- **Description**: A gold-obsessed nether dweller with natural bartering skills
+- **Abilities**: Fire immunity, gold armor bonuses, natural bartering, nether navigation
+- **Weaknesses**: Weak in Overworld, afraid of soul fire, obsessed with gold
 
 ## Installation
 

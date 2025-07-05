@@ -18,5 +18,13 @@ public class OriginRegistry {
         manager.registerOrigin(new WolfOrigin());
         manager.registerOrigin(new CatOrigin());
         manager.registerOrigin(new BeeOrigin());
+        
+        // Register new fun origins
+        manager.registerOrigin(new VillagerOrigin());
+        manager.registerOrigin(new SlimeOrigin());
+        manager.registerOrigin(new DrownedOrigin());
+        manager.registerOrigin(new IronGolemOrigin());
+        manager.registerOrigin(new WitchOrigin());
+        manager.registerOrigin(new PiglinOrigin());
     }
 }

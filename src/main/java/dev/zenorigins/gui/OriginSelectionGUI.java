@@ -14,6 +14,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -27,16 +28,25 @@ public class OriginSelectionGUI implements InventoryHolder {
     private final Inventory inventory;
     
     // Material mappings for each origin
-    private static final Map<String, Material> ORIGIN_MATERIALS = Map.of(
-        "human", Material.PLAYER_HEAD,
-        "enderman", Material.ENDER_PEARL,
-        "blaze", Material.BLAZE_ROD,
-        "spider", Material.SPIDER_EYE,
-        "phantom", Material.PHANTOM_MEMBRANE,
-        "wolf", Material.BONE,
-        "cat", Material.TROPICAL_FISH,
-        "bee", Material.HONEYCOMB
-    );
+    private static final Map<String, Material> ORIGIN_MATERIALS;
+    
+    static {
+        ORIGIN_MATERIALS = new HashMap<>();
+        ORIGIN_MATERIALS.put("human", Material.PLAYER_HEAD);
+        ORIGIN_MATERIALS.put("enderman", Material.ENDER_PEARL);
+        ORIGIN_MATERIALS.put("blaze", Material.BLAZE_ROD);
+        ORIGIN_MATERIALS.put("spider", Material.SPIDER_EYE);
+        ORIGIN_MATERIALS.put("phantom", Material.PHANTOM_MEMBRANE);
+        ORIGIN_MATERIALS.put("wolf", Material.BONE);
+        ORIGIN_MATERIALS.put("cat", Material.TROPICAL_FISH);
+        ORIGIN_MATERIALS.put("bee", Material.HONEYCOMB);
+        ORIGIN_MATERIALS.put("villager", Material.EMERALD);
+        ORIGIN_MATERIALS.put("slime", Material.SLIME_BALL);
+        ORIGIN_MATERIALS.put("drowned", Material.TRIDENT);
+        ORIGIN_MATERIALS.put("irongolem", Material.IRON_INGOT);
+        ORIGIN_MATERIALS.put("witch", Material.BREWING_STAND);
+        ORIGIN_MATERIALS.put("piglin", Material.GOLD_INGOT);
+    }
     
     public OriginSelectionGUI(ZenOrigins plugin, Player player) {
         this.plugin = plugin;
