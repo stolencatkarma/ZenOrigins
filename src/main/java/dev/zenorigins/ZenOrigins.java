@@ -2,6 +2,7 @@ package dev.zenorigins;
 
 import dev.zenorigins.commands.OriginCommand;
 import dev.zenorigins.commands.ZenOriginsCommand;
+import dev.zenorigins.gui.GUIListener;
 import dev.zenorigins.listeners.PlayerListener;
 import dev.zenorigins.managers.OriginManager;
 import dev.zenorigins.managers.PlayerDataManager;
@@ -36,6 +37,7 @@ public final class ZenOrigins extends JavaPlugin {
         
         // Register listeners
         getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
+        getServer().getPluginManager().registerEvents(new GUIListener(this), this);
         
         getLogger().info("ZenOrigins has been enabled!");
     }

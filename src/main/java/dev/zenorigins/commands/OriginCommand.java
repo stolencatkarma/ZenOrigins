@@ -1,6 +1,7 @@
 package dev.zenorigins.commands;
 
 import dev.zenorigins.ZenOrigins;
+import dev.zenorigins.gui.OriginSelectionGUI;
 import dev.zenorigins.origins.Origin;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
@@ -39,11 +40,13 @@ public class OriginCommand implements CommandExecutor, TabCompleter {
         }
         
         if (args.length == 0) {
-            showHelp(player);
+            // Open GUI by default
+            openOriginGUI(player);
             return true;
         }
         
         switch (args[0].toLowerCase()) {
+            case "gui" -> openOriginGUI(player);
             case "list" -> showOriginList(player);
             case "choose" -> {
                 if (args.length < 2) {
@@ -62,10 +65,17 @@ public class OriginCommand implements CommandExecutor, TabCompleter {
     
     private void showHelp(Player player) {
         player.sendMessage(Component.text("=== ZenOrigins Commands ===", NamedTextColor.GOLD, TextDecoration.BOLD));
+        player.sendMessage(Component.text("/origin", NamedTextColor.YELLOW).append(Component.text(" - Open the origin selection GUI", NamedTextColor.WHITE)));
+        player.sendMessage(Component.text("/origin gui", NamedTextColor.YELLOW).append(Component.text(" - Open the origin selection GUI", NamedTextColor.WHITE)));
         player.sendMessage(Component.text("/origin list", NamedTextColor.YELLOW).append(Component.text(" - Show all available origins", NamedTextColor.WHITE)));
         player.sendMessage(Component.text("/origin choose <origin>", NamedTextColor.YELLOW).append(Component.text(" - Choose an origin", NamedTextColor.WHITE)));
         player.sendMessage(Component.text("/origin reset", NamedTextColor.YELLOW).append(Component.text(" - Reset to human origin", NamedTextColor.WHITE)));
         player.sendMessage(Component.text("/origin info", NamedTextColor.YELLOW).append(Component.text(" - Show your current origin", NamedTextColor.WHITE)));
+    }
+
+    private void openOriginGUI(Player player) {
+        OriginSelectionGUI gui = new OriginSelectionGUI(plugin, player);
+        gui.open();
     }
     
     private void showOriginList(Player player) {
@@ -168,7 +178,7 @@ public class OriginCommand implements CommandExecutor, TabCompleter {
         List<String> completions = new ArrayList<>();
         
         if (args.length == 1) {
-            completions.addAll(List.of("list", "choose", "reset", "info"));
+            completions.addAll(List.of("gui", "list", "choose", "reset", "info"));
             return completions.stream()
                 .filter(completion -> completion.toLowerCase().startsWith(args[0].toLowerCase()))
                 .collect(Collectors.toList());
