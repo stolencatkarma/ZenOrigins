@@ -38,6 +38,17 @@ permissions:
       zenorigins.origin.wolf: true
       zenorigins.origin.cat: true
       zenorigins.origin.bee: true
+      zenorigins.origin.villager: true
+      zenorigins.origin.slime: true
+      zenorigins.origin.drowned: true
+      zenorigins.origin.irongolem: true
+      zenorigins.origin.witch: true
+      zenorigins.origin.piglin: true
+      zenorigins.origin.panda: true
+      zenorigins.origin.parrot: true
+      zenorigins.origin.axolotl: true
+      zenorigins.origin.ocelot: true
+      zenorigins.origin.mooshroom: true
   zenorigins.origin.human:
     description: Access to human origin
     default: true
@@ -61,4 +72,37 @@ permissions:
     default: true
   zenorigins.origin.bee:
     description: Access to bee origin
+    default: true
+  zenorigins.origin.villager:
+    description: Access to villager origin
+    default: true
+  zenorigins.origin.slime:
+    description: Access to slime origin
+    default: true
+  zenorigins.origin.drowned:
+    description: Access to drowned origin
+    default: true
+  zenorigins.origin.irongolem:
+    description: Access to iron golem origin
+    default: true
+  zenorigins.origin.witch:
+    description: Access to witch origin
+    default: true
+  zenorigins.origin.piglin:
+    description: Access to piglin origin
+    default: true
+  zenorigins.origin.panda:
+    description: Access to panda origin
+    default: true
+  zenorigins.origin.parrot:
+    description: Access to parrot origin
+    default: true
+  zenorigins.origin.axolotl:
+    description: Access to axolotl origin
+    default: true
+  zenorigins.origin.ocelot:
+    description: Access to ocelot origin
+    default: true
+  zenorigins.origin.mooshroom:
+    description: Access to mooshroom origin
     default: true

@@ -117,6 +117,33 @@ ZenOrigins supports changing player models to match their chosen origin! This re
 - **Abilities**: Fire immunity, gold armor bonuses, natural bartering, nether navigation
 - **Weaknesses**: Weak in Overworld, afraid of soul fire, obsessed with gold
 
+## Rare Mob Origins
+
+### Panda
+- **Description**: A rare and peaceful bamboo-loving giant with unique personalities
+- **Abilities**: Bamboo diet gives extra nutrition, peaceful nature calms hostile mobs, can sit to regenerate, immune to fall damage
+- **Weaknesses**: Only eats bamboo and cake, moves slowly, weak to loud noises, lazy - gets tired easily
+
+### Parrot
+- **Description**: A vibrant tropical bird capable of flight and mimicry
+- **Abilities**: Can fly and glide, mimics nearby player sounds, tropical diet gives energy, shoulder perching, enhanced hearing
+- **Weaknesses**: Takes fall damage if not gliding, only eats seeds and fruits, fragile build, loud and attracts attention
+
+### Axolotl
+- **Description**: A cute aquatic creature with amazing regenerative abilities
+- **Abilities**: Breathes underwater, enhanced swimming, regeneration when in water, can play dead to avoid combat, aquatic diet boosts health
+- **Weaknesses**: Needs water regularly, vulnerable on land, only eats fish and aquatic food, fragile when dry
+
+### Ocelot
+- **Description**: A wild and elusive jungle cat with incredible stealth and agility
+- **Abilities**: Natural stealth and invisibility, enhanced jumping and climbing, night vision, scares away creepers, silent movement
+- **Weaknesses**: Afraid of sudden movements, only eats fish and meat, skittish around groups, cannot swim well
+
+### Mooshroom
+- **Description**: A rare mushroom-covered cow from the mysterious mushroom islands
+- **Abilities**: Produces mushroom soup when hungry, immune to all poisons, spreads beneficial spores, can survive on mushrooms alone, peaceful milk production
+- **Weaknesses**: Only spawns on mushroom islands, cannot eat meat, vulnerable to shearing, slow movement, attracts attention
+
 ## Installation
 
 1. Download the latest `ZenOrigins-1.0.0.jar` from the releases

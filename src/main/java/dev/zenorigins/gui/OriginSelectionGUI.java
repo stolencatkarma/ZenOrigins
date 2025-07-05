@@ -46,6 +46,12 @@ public class OriginSelectionGUI implements InventoryHolder {
         ORIGIN_MATERIALS.put("irongolem", Material.IRON_INGOT);
         ORIGIN_MATERIALS.put("witch", Material.BREWING_STAND);
         ORIGIN_MATERIALS.put("piglin", Material.GOLD_INGOT);
+        // Rare mob origins
+        ORIGIN_MATERIALS.put("panda", Material.BAMBOO);
+        ORIGIN_MATERIALS.put("parrot", Material.FEATHER);
+        ORIGIN_MATERIALS.put("axolotl", Material.TROPICAL_FISH_BUCKET);
+        ORIGIN_MATERIALS.put("ocelot", Material.COD);
+        ORIGIN_MATERIALS.put("mooshroom", Material.RED_MUSHROOM);
     }
     
     public OriginSelectionGUI(ZenOrigins plugin, Player player) {

@@ -26,5 +26,12 @@ public class OriginRegistry {
         manager.registerOrigin(new IronGolemOrigin());
         manager.registerOrigin(new WitchOrigin());
         manager.registerOrigin(new PiglinOrigin());
+        
+        // Register rare mob origins
+        manager.registerOrigin(new PandaOrigin());
+        manager.registerOrigin(new ParrotOrigin());
+        manager.registerOrigin(new AxolotlOrigin());
+        manager.registerOrigin(new OcelotOrigin());
+        manager.registerOrigin(new MooshroomOrigin());
     }
 }
