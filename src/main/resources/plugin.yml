@@ -6,6 +6,8 @@ authors: [YourName]
 website: https://github.com/yourusername/ZenOrigins
 api-version: '1.21'
 
+softdepend: [LibsDisguises]
+
 commands:
   origin:
     description: Choose your origin/entity type

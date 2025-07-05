@@ -2,6 +2,7 @@ package dev.zenorigins.managers;
 
 import dev.zenorigins.ZenOrigins;
 import dev.zenorigins.events.OriginChangeEvent;
+import dev.zenorigins.integrations.DisguiseIntegration;
 import dev.zenorigins.origins.Origin;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -87,6 +88,9 @@ public class OriginManager {
         origin.onApply(player);
         plugin.getPlayerDataManager().setPlayerOrigin(player.getUniqueId(), originId);
         
+        // Apply disguise if available
+        DisguiseIntegration.disguisePlayer(player, originId);
+        
         return true;
     }
 
@@ -117,6 +121,9 @@ public class OriginManager {
             if (currentOrigin != null) {
                 currentOrigin.onRemove(player);
             }
+            
+            // Remove disguise when removing origin
+            DisguiseIntegration.removeDisguise(player);
         }
     }
     

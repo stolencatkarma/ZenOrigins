@@ -9,9 +9,22 @@ A Paper plugin for Minecraft 1.21.4 that allows players to choose and play as di
 - **Balanced Weaknesses**: Every origin has drawbacks to maintain game balance
 - **Once-per-day Restriction**: Players can only change their origin once per in-game day (anytime during that day)
 - **Interactive GUI**: Beautiful server-side inventory GUI for easy origin selection
+- **Player Model Changes**: Optional integration with LibsDisguises to change player appearance to match their origin
 - **Persistent Data**: Player origins and change history are saved across server restarts
 - **Permission System**: Full permission support for different origins
 - **Event System**: Custom events for other plugins to hook into
+
+## Player Model Changes
+
+ZenOrigins supports changing player models to match their chosen origin! This requires the **LibsDisguises** plugin (optional):
+
+1. **Install LibsDisguises** on your server (available on SpigotMC)
+2. **Restart your server** - ZenOrigins will automatically detect LibsDisguises
+3. **Players will appear as their origin** - Spiders look like spiders, Endermen look like Endermen, etc.
+4. **No client-side mods needed** - All model changes are server-side only
+
+**Without LibsDisguises**: Players keep their normal skins but still get all origin abilities and effects.
+**With LibsDisguises**: Players visually transform into their chosen origin!
 
 ## Commands
 

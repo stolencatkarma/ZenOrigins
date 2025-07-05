@@ -3,6 +3,7 @@ package dev.zenorigins;
 import dev.zenorigins.commands.OriginCommand;
 import dev.zenorigins.commands.ZenOriginsCommand;
 import dev.zenorigins.gui.GUIListener;
+import dev.zenorigins.integrations.DisguiseIntegration;
 import dev.zenorigins.listeners.PlayerListener;
 import dev.zenorigins.managers.OriginManager;
 import dev.zenorigins.managers.PlayerDataManager;
@@ -23,6 +24,9 @@ public final class ZenOrigins extends JavaPlugin {
         
         // Save default config
         saveDefaultConfig();
+        
+        // Initialize integrations
+        DisguiseIntegration.initialize(this);
         
         // Initialize managers
         playerDataManager = new PlayerDataManager(this);
