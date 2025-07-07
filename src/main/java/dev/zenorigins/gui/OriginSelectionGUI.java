@@ -52,6 +52,10 @@ public class OriginSelectionGUI implements InventoryHolder {
         ORIGIN_MATERIALS.put("axolotl", Material.TROPICAL_FISH_BUCKET);
         ORIGIN_MATERIALS.put("ocelot", Material.COD);
         ORIGIN_MATERIALS.put("mooshroom", Material.RED_MUSHROOM);
+        // Silly origins
+        ORIGIN_MATERIALS.put("chicken", Material.EGG);
+        ORIGIN_MATERIALS.put("squid", Material.INK_SAC);
+        ORIGIN_MATERIALS.put("sheep", Material.WHITE_WOOL);
     }
     
     public OriginSelectionGUI(ZenOrigins plugin, Player player) {

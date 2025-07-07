@@ -144,6 +144,23 @@ ZenOrigins supports changing player models to match their chosen origin! This re
 - **Abilities**: Produces mushroom soup when hungry, immune to all poisons, spreads beneficial spores, can survive on mushrooms alone, peaceful milk production
 - **Weaknesses**: Only spawns on mushroom islands, cannot eat meat, vulnerable to shearing, slow movement, attracts attention
 
+## Silly Origins
+
+### Chicken
+- **Description**: A clucky, egg-laying feathered friend with questionable intelligence
+- **Abilities**: Lays eggs randomly, can glide short distances, immune to fall damage, attracts other chickens, panic mode gives speed boost
+- **Weaknesses**: Extremely fragile, only eats seeds, runs around randomly when hurt, afraid of everything, makes constant noise
+
+### Squid
+- **Description**: A squishy aquatic cephalopod with too many arms and questionable life choices
+- **Abilities**: Shoots ink clouds for escape, can breathe underwater, tentacle slaps do knockback, can squeeze through small spaces, ink vision underwater
+- **Weaknesses**: Dies quickly on land, extremely squishy and fragile, only eats fish, leaves ink trails everywhere, terrible at walking
+
+### Sheep
+- **Description**: A fluffy woolly creature that's just trying to fit in with the flock
+- **Abilities**: Grows wool over time, can be sheared for resources, follows the crowd, soft landing from falls, attracts wolves... wait that's bad
+- **Weaknesses**: Extremely gullible, follows other players blindly, afraid of wolves, makes sheep noises constantly, can be sheared bald
+
 ## Installation
 
 1. Download the latest `ZenOrigins-1.0.0.jar` from the releases

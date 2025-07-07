@@ -33,5 +33,10 @@ public class OriginRegistry {
         manager.registerOrigin(new AxolotlOrigin());
         manager.registerOrigin(new OcelotOrigin());
         manager.registerOrigin(new MooshroomOrigin());
+        
+        // Register silly origins
+        manager.registerOrigin(new ChickenOrigin());
+        manager.registerOrigin(new SquidOrigin());
+        manager.registerOrigin(new SheepOrigin());
     }
 }

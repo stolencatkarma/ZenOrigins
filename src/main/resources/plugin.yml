@@ -49,6 +49,9 @@ permissions:
       zenorigins.origin.axolotl: true
       zenorigins.origin.ocelot: true
       zenorigins.origin.mooshroom: true
+      zenorigins.origin.chicken: true
+      zenorigins.origin.squid: true
+      zenorigins.origin.sheep: true
   zenorigins.origin.human:
     description: Access to human origin
     default: true
@@ -105,4 +108,13 @@ permissions:
     default: true
   zenorigins.origin.mooshroom:
     description: Access to mooshroom origin
+    default: true
+  zenorigins.origin.chicken:
+    description: Access to chicken origin
+    default: true
+  zenorigins.origin.squid:
+    description: Access to squid origin
+    default: true
+  zenorigins.origin.sheep:
+    description: Access to sheep origin
     default: true
